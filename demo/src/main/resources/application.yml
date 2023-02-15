@@ -1,0 +1,18 @@
+server: 
+  port: 8081
+  servlet: 
+    context-path: /
+
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8083/auth/realms/test
+          jwk-set-uri: http://localhost:8083/auth/realms/test/protocol/openid-connect/certsp://localhost/issuer
